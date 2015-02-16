@@ -1,0 +1,10 @@
+<div class="forums container">
+  <div class="page-header">
+    <h3>Join the Live Discussions <small>Discover the beauty of web sockets</small></h3>
+  </div>
+  <ul>
+    <li ng-repeat="forum in forums">
+      <a href="#{{::forum.route}}">{{forum.title}}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,38 @@
+<div ng-repeat="conversation in conversations">
+
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
+    <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <img class="img-responsive" 
+             src="{{::conversation.image}}"
+             alt="{{::conversation.alt}}">
+        <p>{{::conversation.description | cut:true:150:'...'}}</p>
+        <hr>
+        <div class="pull-left">
+          Replies
+        </div>
+        <div class="pull-right">
+          {{::conversation.replies}}
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="pull-left">
+          Current connections
+        </div>
+        <div class="pull-right">
+          {{::conversation.connections}}
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="panel-footer">
+        <div class="pull-right">
+          <a href="#/{{::conversation.route}}">Read More</a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
