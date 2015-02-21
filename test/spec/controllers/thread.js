@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ThreadCtrl', function () {
 
   // load the controller's module
   beforeEach(module('chanSquaredApp'));
 
-  var MainCtrl,
-      scope;
+  var ThreadCtrl,
+    scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('NavCtrl', {
+    ThreadCtrl = $controller('ThreadCtrl', {
       $scope: scope
     });
   }));
 
-  it('should display three of my favorite boards', function () {
-    expect(scope.boards.length).toBe(3);
+  it('should attach a list of awesomeThings to the scope', function () {
+    expect(scope.awesomeThings.length).toBe(3);
   });
 });

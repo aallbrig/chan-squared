@@ -22,24 +22,22 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/pages/main.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/pages/about.html'
       })
-
       .when('/:boardId', {
-        templateUrl: 'views/topic.html',
+        templateUrl: 'views/pages/board.html',
         controller: 'TopicCtrl'
       })
-      .when('/:boardId/:threadId', {
-        templateUrl: 'views/topic/thread.html',
-        controller: 'TopicThreadCtrl'
+      .when('/:boardId/thread/:threadId', {
+        templateUrl: 'views/pages/thread.html',
+        controller: 'ThreadCtrl'
       })
       .when('/404', {
-        templateUrl: 'views/404.html'
+        templateUrl: 'views/pages/404.html'
       })
       .otherwise({
         redirectTo: '/404'

@@ -8,6 +8,6 @@
  * Controller of the chanSquaredApp
  */
 angular.module('chanSquaredApp')
-  .controller('MainCtrl', function ($scope, Forums) {
-    $scope.forums = Forums.Forums;
+  .controller('MainCtrl', function ($scope, Boards) {
+    $scope.boards = Boards;
   });

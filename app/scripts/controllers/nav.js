@@ -8,13 +8,16 @@
  * Controller of the chanSquaredApp
  */
 angular.module('chanSquaredApp')
-  .controller('NavCtrl', function ($scope) {
-    $scope.navList = [{'title': 'Technology',
-                       'route': null,
-                       'class': 'active',
-                       'href' : 'g/'},
-                      {'title': 'Video Games',
-                       'href': 'v/'},
-                      {'title': '\'Merica',
-                       'href': 'pol/'}];
+  .controller('NavCtrl', function ($scope, $window, $location, NavMenuItems) {
+    $scope.navItems = NavMenuItems.pages;
+    $scope.boards  = NavMenuItems.boards;
+
+    $scope.getActive = function(){
+      $scope.navItems.filter(function(item){
+        item.class = '';
+        return '#' + $location.$$path === item.href;
+      }).forEach(function(item){
+        item.class = 'active';
+      });
+    };
   });
